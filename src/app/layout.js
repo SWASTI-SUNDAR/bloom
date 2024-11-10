@@ -3,6 +3,7 @@ import "./globals.css";
 
 import { Montserrat } from "next/font/google";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 const montserrat = Montserrat({
   // weight: [], // Adjust weights as needed
@@ -19,6 +20,7 @@ export default function RootLayout({ children }) {
       <body className={`${montserrat.className} overflow-x-hidden antialiased`}>
       <Navbar/> 
       {children}
+      <Footer/>
       </body>
     </html>
   );

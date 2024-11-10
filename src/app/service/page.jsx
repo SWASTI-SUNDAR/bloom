@@ -12,7 +12,7 @@ function page() {
       >
         <div className="pt-28 relative flex items-center px-8 py-4 mt-8">
           <img
-            src="/main.png" // Replace with the actual path to your side image
+            src="/main.png"
             alt="Decorative Lines"
             className="absolute left-2 mb-10 -translate-x-1/2 "
           />

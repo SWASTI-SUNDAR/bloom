@@ -112,8 +112,8 @@ const Navbar = () => {
                     <Link
                       key={subIndex}
                       href={`${item.to}#${subItem.to}`}
-                      spy={true}
-                      smooth={true}
+                      // spy={true}
+                      // smooth={true}
                       offset={-70}
                       duration={500}
                       className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
@@ -132,8 +132,8 @@ const Navbar = () => {
           <Button>
             <Link
               href="contact"
-              spy={true}
-              smooth={true}
+              // spy={true}
+              // smooth={true}
               offset={-70}
               duration={500}
             >
@@ -173,8 +173,8 @@ const Navbar = () => {
                         <Link
                           key={subIndex}
                           to={subItem.to}
-                          spy={true}
-                          smooth={true}
+                          // spy={true}
+                          // smooth={true}
                           offset={-70}
                           duration={500}
                           className="block font-medium text-black p-2"
@@ -188,8 +188,7 @@ const Navbar = () => {
                 ) : (
                   <Link
                     to={item.to}
-                    spy={true}
-                    smooth={true}
+                
                     offset={-70}
                     duration={500}
                     className="font-semibold text-black text-[22px] p-3 w-full"
@@ -204,8 +203,6 @@ const Navbar = () => {
               <Button>
                 <Link
                   to="contact"
-                  spy={true}
-                  smooth={true}
                   offset={-70}
                   duration={500}
                   onClick={() => setShow(false)}
