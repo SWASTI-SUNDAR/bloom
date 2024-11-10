@@ -1,3 +1,4 @@
+import Banner from "@/components/Banner";
 import Collabration from "@/components/Collabration";
 import Eventcard from "@/components/Eventcard";
 import Teams from "@/components/Teams";
@@ -12,10 +13,10 @@ export const metadata = {
 
 const page = () => {
   return (
-    <section className="bg-[#F2F2F2]">
+    <section className="bg-[#F2F2F2] overflow-hidden">
       <div
         style={{ backgroundImage: `url('/background.png')` }}
-        className={` h-[70vh]  bg-no-repeat w-screen bg-contain bg-[#F2F2F2] bg-top flex flex-col gap-10 items-center`}
+        className={`lg:h-[70vh]  bg-no-repeat w-screen bg-contain bg-[#F2F2F2] bg-top flex flex-col gap-10 items-center`}
       >
         <div className="pt-28 relative flex items-center px-8 py-4 mt-8">
           <img
@@ -32,10 +33,10 @@ const page = () => {
           </p>
         </div>
       </div>
-      <div className="">
+      <div className="mt-10 mb-10">
         <h1 className="typography">Our Mission</h1>
-        <div className="bg-[#F2F2F2] px-5 lg:px-28 flex flex-col lg:flex-row justify-center items-center gap-16">
-          <p className="text-xl font-normal text-[#373737] leading-[40px]">
+        <div className="bg-[#F2F2F2] px-5 lg:px-28 flex flex-col-reverse lg:flex-row justify-center items-center lg:gap-16">
+          <p className="lg:text-xl text-center lg:text-start font-normal text-[#373737] lg:leading-[40px]">
             Our mission at Bloom is to create a nurturing environment where
             individuals can grow, learn, and connect with their inner potential.
             We believe in fostering creativity, mindfulness, and personal
@@ -48,23 +49,23 @@ const page = () => {
         {data.map((item, index) => (
           <div
             key={index}
-            className=" px-5 lg:px-28 flex flex-col justify-center items-center "
+            className="px-5 lg:px-28 flex flex-col justify-center items-center "
           >
-            <div className="bg-[#EFFFFD] p-3 rounded-full">
-              <img src={item.icon} alt="" />
+            <div className="bg-[#EFFFFD] lg:p-3 p-1 rounded-full">
+              <img src={item.icon} className="max-w-24" alt="" />
             </div>
-            <p className="text-2xl font-normal text-[#00A59B] leading-[40px]">
+            <p className="lg:text-2xl font-normal text-[#00A59B] lg:leading-[40px]">
               {item.title}
             </p>
           </div>
         ))}
       </div>
-      <div className="">
+      <div className="mt-10 mb-10">
         <h1 className="typography mt-10">Our Vission</h1>
-        <div className="bg-[#F2F2F2] px-5 lg:px-28 flex flex-col- lg:flex-row justify-center items-center gap-20">
+        <div className="bg-[#F2F2F2] px-5 lg:px-28 flex flex-col mt-5 lg:flex-row justify-center items-center lg:gap-16 gap-5">
           <img src="/about/vision.png" alt="" />
 
-          <p className="text-xl font-normal text-[#373737] leading-[40px]">
+          <p className="lg:text-xl font-normal text-center lg:text-start text-[#373737] lg:leading-[40px]">
             Our mission at Bloom is to create a nurturing environment where
             individuals can grow, learn, and connect with their inner potential.
             We believe in fostering creativity, mindfulness, and personal
@@ -81,7 +82,7 @@ const page = () => {
           welcoming environment.
         </p>
       </div>
-      <div className="px-5 lg:px-28 mt-10 grid justify-center items-center grid-cols-3  gap-20 ">
+      <div className="px-5 lg:px-28 mt-10 grid justify-center items-center lg:grid-cols-3  gap-20 ">
         {EventData.map((item, index) => (
           <Eventcard key={index} item={item} />
         ))}
@@ -92,40 +93,7 @@ const page = () => {
         <h1 className="typography mb-10"> Collaboration</h1>
         <Collabration />
       </div>
-      <div className="px-5 lg:px-28 mt-10 pb-10">
-        <div
-          style={{
-            backgroundImage: `url('/collboration/bg.png')`,
-          }}
-          className="bg-cover flex justify-around items-center p-10 gap-24 rounded-3xl"
-        >
-          <div className="flex flex-col gap-10">
-            <h1 className="text-[#F3FDFD] text-2xl font-semibold ">
-              Interested in collaborating with us?
-            </h1>
-            <p className="text-[#F3FDFD] text-lg">
-              Reach out to explore partnership opportunities that <br /> can
-              help more people bloom
-            </p>
-            <div>
-              <button
-                type="button"
-                className="focus:outline-none rounded-xl bg-white text-[#00A896] hover:scale-95 duration-300 py-2 px-4"
-              >
-                Register Now
-              </button>
-            </div>
-          </div>
-          <div>
-            <Image
-              height={350}
-              width={350}
-              className=""
-              src="/collboration/icon.png"
-            />
-          </div>
-        </div>
-      </div>
+      <Banner/>
     </section>
   );
 };

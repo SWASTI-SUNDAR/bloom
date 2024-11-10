@@ -73,7 +73,7 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="lg:px-32 pb-16 px-5 bg-white mt-10 pt-10 ">
+    <section id="contact" className="lg:px-32 pb-16 px-5 bg-white mt-10  ">
       <Container>
         <div className="overflow-hidden">
           <h1 className="text-4xl font-bold text-[#00A59B]">
@@ -87,7 +87,7 @@ const Contact = () => {
 
           <div className="mt-10">
             <form onSubmit={handleSubmit} className="">
-              <div className="grid grid-cols-2 gap-10 ">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 ">
                 <div className="">
                   <label
                     htmlFor="name"

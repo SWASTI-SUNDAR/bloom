@@ -3,13 +3,13 @@
 @tailwind utilities;
 
 .sub-heading {
-  @apply text-center text-3xl font-semibold text-[#98FEF8];
+  @apply text-center lg:text-3xl font-semibold text-[#98FEF8];
 }
 .heading {
-  @apply text-center text-5xl font-semibold text-[white];
+  @apply text-center lg:text-5xl text-xl font-semibold text-[white];
 }
 .typography {
-  @apply text-center text-5xl font-semibold text-[#00A59B];
+  @apply text-center lg:text-5xl text-2xl font-semibold text-[#00A59B];
 }
 
 .bg-blob {

@@ -18,12 +18,12 @@ const Projects = () => {
   return (
     <div
       id="projects"
-      className="min-h-screen bg-[#F2F2F2] px-5 md:px-28 pb-10"
+      className="lg:min-h-screen bg-[#F2F2F2] px-5 md:px-28 pb-10"
     >
       <h1 className="typography pt-10"> Nostro Progetto</h1>
-      <p className="text-center mt-10  text-xl font-normal text-[#808080]">
+      <p className="text-center lg:mt-10 mt-2  lg:text-xl font-normal text-[#808080]">
         Bloom è un centro di pedagogia, un’oasi dove persone di tutte le età
-        possono fiorire <br /> attraverso esperienze trasformative di
+        possono <br /> fiorire attraverso esperienze trasformative di
         apprendimento, cocreazione, e comunità.
       </p>
       <div className="flex flex-col-reverse lg:flex-row gap-10 items-center mt-7">

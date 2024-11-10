@@ -2,7 +2,7 @@ import React from "react";
 
 const Eventcard = ({ item }) => {
   return (
-    <div className="flex flex-col shadow-xl rounded-3xl justify-center items-center w-96 gap-3">
+    <div className="flex flex-col shadow-xl rounded-3xl justify-center items-center lg:w-96 gap-3">
       <div>
         <img src={item?.icon} alt="" />
       </div>
