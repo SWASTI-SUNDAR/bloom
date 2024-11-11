@@ -1,25 +1,44 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
-import { Link as ScrollLink } from "react-scroll";
+import Link from "next/link";
+// import { Link as ScrollLink } from "react-scroll";
+
 
 const data = [
+  { title: "Chi siamo", to: "/about" },
   {
-    title: "Nostro Progetto",
-    to: "projects",
+    title: "Comunità",
+    to: "/community",
+    items: [
+      { title: "Buds", to: "Buds" },
+      { title: "Students", to: "Students" },
+      { title: "Parents", to: "Parents" },
+      { title: "Bloomher", to: "Women" },
+      { title: "Creators", to: "Creators" },
+    ],
   },
   {
-    title: "Nostro Spazio",
-    to: "space",
+    title: "Servizio",
+    to: "/service",
+    items: [
+      { title: "One to one tutoring", to: "tutoring" },
+      { title: "Consulans pedagogica", to: "pedagogica" },
+      { title: "Organize events", to: "events" },
+      { title: "Projectzione", to: "projection" },
+    ],
   },
   {
-    title: "Le Nostre Servizi",
-    to: "service",
+    title: "Network",
+    to: "/network",
+    items: [
+      { title: "Bloom e Scuole", to: "schools" },
+      { title: "Bloom e ISTITUZIONI ASSOCIAZIONI", to: "associations" },
+      { title: "Bloom e Aziende", to: "companies" },
+    ],
   },
-  {
-    title: "Eventi",
-    to: "events",
-  },
+  { title: "Eventi", to: "/events" },
+  { title: "Spazio", to: "/space" },
 ];
 
 const Footer = () => {
@@ -44,12 +63,13 @@ const Footer = () => {
         <div className="lg:flex flex-col hidden lg:flex-row items-start justify-start gap-5">
           {isClient &&
             data.map((item, index) => (
-              <ScrollLink
+              <Link
+                href={item.to}
                 activeClass="active-link"
                 className="font-medium cursor-pointer"
               >
                 {item.title}
-              </ScrollLink>
+              </Link>
             ))}
         </div>
         <div className="flex gap-3">

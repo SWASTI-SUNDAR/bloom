@@ -2,17 +2,17 @@ import Container from "./Container";
 
 const Banner = () => {
   return (
-    <Container>
+    <div className=" lg:px-28 mx-auto">
       <div
-        className={`bg-[url("/banner.png")] h-[67vh] mt-16 pb-16
-             bg-contain  flex justify-center 
-            items-start p-16 flex-col gap-12    
+        className={`lg:bg-[url("/banner.png")] bg-[#00A896] lg:bg-transparent  lg:h-[67vh] mt-16 pb-16
+             lg:bg-contain bg-cover  flex justify-center 
+            items-start p-16 flex-col lg:gap-12 gap-5   
             bg-no-repeat mx-auto`}
       >
-        <h1 className="text-[#F3FDFD] font-semibold text-4xl">
+        <h1 className="text-[#F3FDFD] font-semibold lg:text-4xl">
           Ready to Get Started?
         </h1>
-        <p className="text-[#F3FDFD] font-semibold text-2xl">
+        <p className="text-[#F3FDFD] font-semibold lg:text-2xl">
           Book a tour of our coworking space today and discover how Bloom can{" "}
           <br />
           support your work and creativity
@@ -24,7 +24,7 @@ const Banner = () => {
           Register Now
         </button>
       </div>
-    </Container>
+    </div>
   );
 };
 

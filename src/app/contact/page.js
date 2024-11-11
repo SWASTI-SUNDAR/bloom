@@ -1,32 +1,19 @@
 "use client";
 import Contact from "@/components/Contact";
 import Container from "@/components/Container";
+import SectionWithBackground from "@/components/SectionWithBackground";
 import Image from "next/image";
 import React from "react";
 
-
-
 const page = () => {
   return (
-    <section className="bg-[#F2F2F2] min-h-screen">
-      <div
-        style={{ backgroundImage: `url('/background.png')` }}
-        className={` h-[59vh]  bg-no-repeat w-screen bg-cover  bg-top flex flex-col gap-10 items-center`}
-      >
-        <div className="pt-28 relative flex items-center px-8 py-4 mt-8">
-          <img
-            src="/main.png" // Replace with the actual path to your side image
-            alt="Decorative Lines"
-            className="absolute left-2 mb-10 -translate-x-1/2 "
-          />
-          <p className="heading">Contact Us</p>
-        </div>
-        <div className="flex">
-          <Image src="/sign.png" alt="sign" width={350} height={100} />
-        </div>
-      </div>
+    <section className="bg-[#F2F2F2] min-h-screen overflow-hidden">
+      <SectionWithBackground
+        title="Contact Us"
+        description="We are here to help you. <br /> Contact us for any queries."
+      />
       <Container>
-        <div className="grid mt-16 grid-cols-3 gap-10">
+        <div className="grid mt-16 lg:mt-10 grid-cols-1 lg:grid-cols-3 gap-10">
           {ContactData.map((item, index) => {
             return (
               <div

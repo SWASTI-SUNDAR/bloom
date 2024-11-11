@@ -1,6 +1,7 @@
 import Banner from "@/components/Banner";
 import Collabration from "@/components/Collabration";
 import Eventcard from "@/components/Eventcard";
+import SectionWithBackground from "@/components/SectionWithBackground";
 import Teams from "@/components/Teams";
 import { EventData } from "@/data/EventData";
 import Image from "next/image";
@@ -14,26 +15,11 @@ export const metadata = {
 const page = () => {
   return (
     <section className="bg-[#F2F2F2] overflow-hidden">
-      <div
-        style={{ backgroundImage: `url('/background.png')` }}
-        className={`lg:h-[70vh]  bg-no-repeat w-screen bg-contain bg-[#F2F2F2] bg-top flex flex-col gap-10 items-center`}
-      >
-        <div className="pt-28 relative flex items-center px-8 py-4 mt-8">
-          <img
-            src="/main.png" // Replace with the actual path to your side image
-            alt="Decorative Lines"
-            className="absolute left-2 mb-10 -translate-x-1/2 "
-          />
-          <p className="heading ">About Us</p>
-        </div>
-        <div>
-          <p className="sub-heading ">
-            A space to nurture your potential, connect with <br /> others, and
-            explore your creativity.
-          </p>
-        </div>
-      </div>
-      <div className="mt-10 mb-10">
+      <SectionWithBackground
+        title="About Us"
+        description="A space to nurture your potential, connect <br /> with others, and explore your creativity."
+      />
+      <div className="mt-16 lg:mt-10 mb-10">
         <h1 className="typography">Our Mission</h1>
         <div className="bg-[#F2F2F2] px-5 lg:px-28 flex flex-col-reverse lg:flex-row justify-center items-center lg:gap-16">
           <p className="lg:text-xl text-center lg:text-start font-normal text-[#373737] lg:leading-[40px]">
@@ -93,7 +79,7 @@ const page = () => {
         <h1 className="typography mb-10"> Collaboration</h1>
         <Collabration />
       </div>
-      <Banner/>
+      <Banner />
     </section>
   );
 };

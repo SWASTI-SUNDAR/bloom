@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const SpaceCard = ({ item }) => {
   return (
-    <div className="bg-white p-4 rounded-lg shadow-xl ">
+    <div className="bg-white p-4 rounded-lg shadow-xl min-w-96">
       <Image
         src={item.src}
         className="w-full 96 object-cover rounded-xl"

@@ -1,6 +1,5 @@
 "use client";
 import Link from "next/link";
-// import { Link } from "react-scroll";
 import Button from "./Button";
 import { useState, useEffect } from "react";
 import { RiArrowDropDownLine } from "react-icons/ri";
@@ -9,7 +8,6 @@ const Navbar = () => {
   const [show, setShow] = useState(false);
   const [dropdown, setDropdown] = useState(null);
 
-  // Handle outside click to close the dropdown
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (!event.target.closest(".dropdown-container")) {
@@ -25,10 +23,10 @@ const Navbar = () => {
   }, []);
 
   const data = [
-    { title: "Chi siamo", to: "about" },
+    { title: "Chi siamo", to: "/about" },
     {
       title: "Comunità",
-      to: "community",
+      to: "/community",
       items: [
         { title: "Buds", to: "Buds" },
         { title: "Students", to: "Students" },
@@ -39,7 +37,7 @@ const Navbar = () => {
     },
     {
       title: "Servizio",
-      to: "community",
+      to: "/service",
       items: [
         { title: "One to one tutoring", to: "tutoring" },
         { title: "Consulans pedagogica", to: "pedagogica" },
@@ -49,14 +47,15 @@ const Navbar = () => {
     },
     {
       title: "Network",
-      to: "network",
+      to: "/network",
       items: [
         { title: "Bloom e Scuole", to: "schools" },
         { title: "Bloom e ISTITUZIONI ASSOCIAZIONI", to: "associations" },
         { title: "Bloom e Aziende", to: "companies" },
       ],
     },
-    { title: "Eventi", to: "events" },
+    { title: "Eventi", to: "/events" },
+    { title: "Spazio", to: "/space" },
   ];
 
   const handleMenuClick = (index) => {
@@ -67,10 +66,8 @@ const Navbar = () => {
     <>
       <nav className="flex lg:px-32 px-5 bg-white fixed py-3 z-50 backdrop-blur-2xl border-b-[3px] w-full justify-between items-center">
         <div>
-          <Link
-          href={"/"}
-          >
-          <img className="h-10 lg:w-auto" src="/logo/logo.png" alt="Logo" />
+          <Link href="/">
+            <img className="h-10 lg:w-auto" src="/logo/logo.png" alt="Logo" />
           </Link>
         </div>
 
@@ -85,37 +82,23 @@ const Navbar = () => {
             >
               {item.items ? (
                 <span
-                  className="font-medium flex justify-center items-center"
+                  className="flex justify-center items-center"
                   onClick={() => handleMenuClick(index)}
                 >
-                  <Link href={item.to}>{item.title}</Link>
+                  <Link href={item.to || "/"}>{item.title}</Link>
                   <RiArrowDropDownLine className="text-xl" />
                 </span>
               ) : (
-                <Link
-                  href={item.to}
-                  // spy={true}
-                  // smooth={true}
-                  // offset={-70}
-                  // duration={500}
-                  // activeClass="active-link"
-                  // className="font-medium"
-                >
-                  {item.title}
-                </Link>
+                <Link href={item.to || "/"}>{item.title}</Link>
               )}
 
               {/* Dropdown Menu */}
               {item.items && dropdown === index && (
-                <div className="absolute top-full left-0 bg-white shadow-lg rounded-md ">
+                <div className="absolute top-full left-0 bg-white shadow-lg rounded-md">
                   {item.items.map((subItem, subIndex) => (
                     <Link
                       key={subIndex}
-                      href={`${item.to}#${subItem.to}`}
-                      // spy={true}
-                      // smooth={true}
-                      offset={-70}
-                      duration={500}
+                      href={`${item.to || ""}#${subItem.to || ""}`}
                       className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                     >
                       {subItem.title}
@@ -130,15 +113,7 @@ const Navbar = () => {
         {/* Desktop Right Section */}
         <div className="hidden lg:flex gap-10 justify-center items-center">
           <Button>
-            <Link
-              href="contact"
-              // spy={true}
-              // smooth={true}
-              offset={-70}
-              duration={500}
-            >
-              Contattaci
-            </Link>
+            <Link href="/contact">Contattaci</Link>
           </Button>
         </div>
 
@@ -166,17 +141,13 @@ const Navbar = () => {
                 {item.items ? (
                   <>
                     <span className="font-semibold text-black text-[22px] p-3">
-                      {item.title}
+                      <Link href={item.to || "/"}>{item.title}</Link>
                     </span>
                     <div className="pl-4">
                       {item.items.map((subItem, subIndex) => (
                         <Link
                           key={subIndex}
-                          to={subItem.to}
-                          // spy={true}
-                          // smooth={true}
-                          offset={-70}
-                          duration={500}
+                          href={`${item.to || ""}#${subItem.to || ""}`}
                           className="block font-medium text-black p-2"
                           onClick={() => setShow(false)}
                         >
@@ -187,10 +158,7 @@ const Navbar = () => {
                   </>
                 ) : (
                   <Link
-                    to={item.to}
-                
-                    offset={-70}
-                    duration={500}
+                    href={item.to || "/"}
                     className="font-semibold text-black text-[22px] p-3 w-full"
                     onClick={() => setShow(false)}
                   >
@@ -201,12 +169,7 @@ const Navbar = () => {
             ))}
             <div className="p-3 w-full">
               <Button>
-                <Link
-                  to="contact"
-                  offset={-70}
-                  duration={500}
-                  onClick={() => setShow(false)}
-                >
+                <Link href="/contact" onClick={() => setShow(false)}>
                   Contattaci
                 </Link>
               </Button>
