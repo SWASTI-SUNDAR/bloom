@@ -64,6 +64,7 @@ const Footer = () => {
           {isClient &&
             data.map((item, index) => (
               <Link
+                key={index}
                 href={item.to}
                 activeClass="active-link"
                 className="font-medium cursor-pointer"

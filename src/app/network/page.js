@@ -47,7 +47,7 @@ const page = () => {
         <div className="flex flex-col lg:flex-row gap-3 mt-10 lg:mt-16">
           <div className="lg:basis-2/3 flex justify-between p-3 bg-white rounded-xl items-center gap-5 lg:gap-0">
             <div className="flex  flex-col justify-center lg:p-10 lg:gap-10 gap-1">
-              <p className="text-[#008C95] font-semibold">Bloom's Network</p>
+              <p className="text-[#008C95] font-semibold">Bloom&apos;s Network</p>
               <h1 className="lg:text-4xl text-lg font-semibold ">
                 Our network is a <br /> ecosystem of partnerships <br /> and
                 collaborations

@@ -22,7 +22,7 @@ const Projects = () => {
     >
       <h1 className="typography pt-10"> Nostro Progetto</h1>
       <p className="text-center lg:mt-10 mt-2  lg:text-xl font-normal text-[#808080]">
-        Bloom è un centro di pedagogia, un’oasi dove persone di tutte le età
+        Bloom è un centro di pedagogia, un&apos;oasi dove persone di tutte le età
         possono <br /> fiorire attraverso esperienze trasformative di
         apprendimento, cocreazione, e comunità.
       </p>
