@@ -22,18 +22,19 @@ const Projects = () => {
     >
       <h1 className="typography pt-10"> Nostro Progetto</h1>
       <p className="text-center lg:mt-10 mt-2  lg:text-xl font-normal text-[#808080]">
-        Bloom è un centro di pedagogia, un&apos;oasi dove persone di tutte le età
-        possono <br /> fiorire attraverso esperienze trasformative di
+        Bloom è un centro di pedagogia, un&apos;oasi dove persone di tutte le
+        età possono <br /> fiorire attraverso esperienze trasformative di
         apprendimento, cocreazione, e comunità.
       </p>
       <div className="flex flex-col-reverse lg:flex-row gap-10 items-center mt-7">
         <div className="lg:w-1/2">
           <span className="lg:text-xl text-[#373737] font- lg:leading-10">
             Nato per migliorare il dinamismo umano e ristabilire legami
-            intergenerazionali, Bloom offre uno spazio sicuro per l'esplorazione
-            e la sperimentazione, libero da giudizi. Promuove la creazione di
-            comunità e funge da catalizzatore per la co-creazione, supportando
-            ogni Bloomer nel proprio percorso di crescita continua.
+            intergenerazionali, Bloom offre uno spazio sicuro per
+            l&apos;esplorazione e la sperimentazione, libero da giudizi.
+            Promuove la creazione di comunità e funge da catalizzatore per la
+            co-creazione, supportando ogni Bloomer nel proprio percorso di
+            crescita continua.
           </span>
         </div>
         <div className="flex justify-center items-center lg:w-1/2">
