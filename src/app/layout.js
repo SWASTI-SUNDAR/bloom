@@ -7,7 +7,8 @@ import Footer from "@/components/Footer";
 
 const montserrat = Montserrat({
   // weight: [], // Adjust weights as needed
-  subsets: ["latin"], // Specify subsets if required
+  subsets: ["latin"], 
+  weights: [400, 500, 600, 700, 800, 900],
 });
 export const metadata = {
   title: "Create Next App",

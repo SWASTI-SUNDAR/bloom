@@ -46,8 +46,8 @@ const Space = () => {
   return (
     <>
       <div className="overflow-hidden">
-        <div id="space" className="px-5 md:px-28">
-          <h1 className="typography pt-10"> Nostro Spazio</h1>
+        <div id="space" className="px-5 md:px-28 pb-16">
+          <h1 className="typography pt-16"> Nostro Spazio</h1>
           <p className="text-center  lg:mt-5 mt-2  lg:text-xl font-light text-[#808080] ">
             Un Rifugio per la Crescita e la Creatività
           </p>

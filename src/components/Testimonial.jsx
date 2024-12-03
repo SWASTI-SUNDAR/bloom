@@ -7,13 +7,13 @@ const TestimonialCard = ({
   return (
     <div className="max-w-sm mx-auto p-4 bg-white rounded-lg shadow-lg flex flex-col space-y-4">
       <div className="flex items-center justify-between space-x-4">
-        <div className="flex gap-2">
+        <div className="flex gap-2 justify-center items-center">
           <Image
             src={data.profilePic}
             alt={`${data.name}'s profile`}
             width={48}
             height={48}
-            className="rounded-full border-2 border-gray-200"
+            className="rounded-full h-12 w-12 border-gray-200"
           />
           <div>
             <h3 className="text-lg font-semibold">{data.name}</h3>

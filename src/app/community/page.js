@@ -30,12 +30,10 @@ const page = () => {
                 <div
                   className={`flex flex-col justify-center items-start gap-5 p-7 `}
                 >
-                  <Image
+                  <img
                     src={item.icon}
-                    className=" max-h-96 max-w-96 object-contain"
+                    className="object-contain"
                     alt=""
-                    height={300}
-                    width={350}
                   />
                   <div>
                     <h1 className="text-3xl font-semibold text-[#00A896] text-center ">

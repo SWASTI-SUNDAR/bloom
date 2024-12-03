@@ -2,7 +2,7 @@ import React from "react";
 
 const HeroSection = () => {
   return (
-    <section className="flex lg:flex-row flex-col-reverse w-screen lg:justify-between justify-center items-center gap-5 lg:gap-0">
+    <section className="flex lg:flex-row flex-col-reverse w-screen lg:justify-between justify-center items-center gap-5 lg:gap-0 xl:px-28">
       <div className="lg:px-16 px-5 flex flex-col gap-5 lg:gap-10">
         <h1 className="text-[#00A59B] text-center lg:text-start text-2xl lg:text-6xl font-bold ">
           Bloom in Your Space <br /> in Your Time
@@ -24,13 +24,11 @@ const HeroSection = () => {
       </div>
 
       <div className="lg:flex hidden">
-        <img src="/home/hero.png" alt="" />
+        <img src="/home/hero1.png" alt="" />
       </div>
       <div className="block lg:hidden mt-10">
         <img src="/home/hero_mobile.png" alt="" />
       </div>
-      
-
     </section>
   );
 };

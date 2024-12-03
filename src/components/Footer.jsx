@@ -50,7 +50,7 @@ const Footer = () => {
   }, []);
 
   return (
-    <div className="bg-[#F2F2F2] pt-10">
+    <div className="bg-[#F2F2F2] pt-16">
       <div className="flex flex-col justify-center items-center p-3 gap-5 bg-white pt-16">
         <Image
           src="/logo/logo.png"
