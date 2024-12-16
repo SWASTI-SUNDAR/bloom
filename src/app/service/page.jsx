@@ -4,6 +4,11 @@ import SectionWithBackground from "@/components/SectionWithBackground";
 import { ServiceData } from "@/data/ServiceData";
 import React from "react";
 
+
+export const metadata = {
+  title: "Our Services",
+  description: "Bloom Services",
+};
 function page() {
   return (
     <section className="bg-[#F2F2F2] ">

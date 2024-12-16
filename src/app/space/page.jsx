@@ -20,10 +20,10 @@ const page = () => {
             <br /> learning, and creativity"
       />
       <Container>
-        <h1 className="lg:text-5xl text-2xl mt-16 font-semibold text-[#00A59B] lg:mt-10 text-start">
+        <h1 className="lg:text-5xl text-2xl mt-5 font-semibold text-[#00A59B] lg:mt-10 text-start">
           Take a Look Inside👀
         </h1>
-        <div className="flex flex-wrap mt-10 gap-5">
+        <div className="flex flex-wrap mt-5 lg:mt-10 gap-5">
           {SpaceData.map((item, index) => {
             return <SpaceCard key={index} item={item} />;
           })}

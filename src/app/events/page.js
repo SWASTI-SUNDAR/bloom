@@ -9,6 +9,10 @@ import { EventData } from "@/data/EventData";
 import { TestimonialData } from "@/data/Testimonial";
 import React from "react";
 
+// export const metadata = {
+//   title: "Events",
+//   description: "Bloom Events",
+// };
 const page = () => {
   return (
     <div className="overflow-hidden">

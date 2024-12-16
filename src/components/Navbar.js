@@ -7,6 +7,7 @@ import { RiArrowDropDownLine } from "react-icons/ri";
 const Navbar = () => {
   const [show, setShow] = useState(false);
   const [dropdown, setDropdown] = useState(null);
+  const [activeDropdown, setActiveDropdown] = useState(null);
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -134,32 +135,57 @@ const Navbar = () => {
 
       {/* Mobile Navigation Menu */}
       {show && (
-        <div className="bg-white lg:hidden rounded-2xl w-screen right-0 border fixed mt-14 z-40">
-          <div className="pt-4 flex flex-col items-start">
+        <div className="bg-white lg:hidden rounded-lg w-full right-0 border shadow-lg fixed mt-14 z-40">
+          <div className="pt-4 flex flex-col">
             {data.map((item, index) => (
               <div key={index} className="w-full">
                 {item.items ? (
                   <>
-                    <span className="font-semibold text-black text-[22px] p-3">
-                      <Link href={item.to || "/"}>{item.title}</Link>
-                    </span>
-                    <div className="pl-4">
-                      {item.items.map((subItem, subIndex) => (
-                        <Link
-                          key={subIndex}
-                          href={`${item.to || ""}#${subItem.to || ""}`}
-                          className="block font-medium text-black p-2"
-                          onClick={() => setShow(false)}
-                        >
-                          {subItem.title}
-                        </Link>
-                      ))}
-                    </div>
+                    <button
+                      className="flex justify-between items-center w-full px-4 py-2 font-semibold text-black text-lg border-b border-gray-200 hover:bg-gray-100 transition duration-300"
+                      onClick={() =>
+                        setActiveDropdown(
+                          activeDropdown === index ? null : index
+                        )
+                      }
+                    >
+                      {item.title}
+                      <svg
+                        className={`w-4 h-4 transition-transform duration-300 ${
+                          activeDropdown === index ? "rotate-180" : ""
+                        }`}
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        strokeWidth={2}
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M19 9l-7 7-7-7"
+                        />
+                      </svg>
+                    </button>
+                    {activeDropdown === index && (
+                      <div className="pl-6 bg-gray-50">
+                        {item.items.map((subItem, subIndex) => (
+                          <Link
+                            key={subIndex}
+                            href={`${item.to || ""}#${subItem.to || ""}`}
+                            className="block font-medium text-black text-sm py-2 px-4 hover:text-blue-500 hover:bg-gray-100 transition duration-300"
+                            onClick={() => setShow(false)}
+                          >
+                            {subItem.title}
+                          </Link>
+                        ))}
+                      </div>
+                    )}
                   </>
                 ) : (
                   <Link
                     href={item.to || "/"}
-                    className="font-semibold text-black text-[22px] p-3 w-full"
+                    className="font-semibold text-black text-lg px-4 py-2 block border-b border-gray-200 hover:bg-gray-100 transition duration-300"
                     onClick={() => setShow(false)}
                   >
                     {item.title}
@@ -167,9 +193,13 @@ const Navbar = () => {
                 )}
               </div>
             ))}
-            <div className="p-3 w-full">
+            <div className="p-4 w-full">
               <Button>
-                <Link href="/contact" onClick={() => setShow(false)}>
+                <Link
+                  href="/contact"
+                  onClick={() => setShow(false)}
+                  className="text-white"
+                >
                   Contattaci
                 </Link>
               </Button>

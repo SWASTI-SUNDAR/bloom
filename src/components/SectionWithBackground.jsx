@@ -3,7 +3,7 @@ import React from "react";
 const SectionWithBackground = ({ title, description }) => {
   return (
     <section className="bg-[#F2F2F2]">
-      <div className="relative bg-[#008C95] w-full overflow-hidden flex flex-col items-center justify-center gap-10 pt-20 ">
+      <div className="relative bg-[#008C95] w-full overflow-hidden flex flex-col items-center justify-center lg:gap-10 pt-20 ">
         {/* Grid Lines */}
         <div className="absolute inset-0 z-0 bg-grid opacity-100"></div>
 
