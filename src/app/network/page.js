@@ -17,7 +17,7 @@ const page = () => {
         description="We collaborate with leading institutions,<br /> schools impactful projects."
       />
       <Container>
-        <h1 className="typography mt-16 lg:mt-10">Our networks</h1>
+        <h1 className="typography mt-5 lg:mt-10">Our networks</h1>
         <p className="text-center lg:mt-10 mt-2 lg:text-xl font-normal text-[#808080]  ">
           We collaborate with leading institutions, schools, and companies to
           nurture creativity, inspire learning, and foster growth. Our
