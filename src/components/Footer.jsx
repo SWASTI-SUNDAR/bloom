@@ -67,7 +67,7 @@ const Footer = () => {
                 key={index}
                 href={item.to}
                 activeClass="active-link"
-                className="font-medium cursor-pointer"
+                className="font-normal cursor-pointer"
               >
                 {item.title}
               </Link>
@@ -94,7 +94,7 @@ const Footer = () => {
           />
         </div>
         <div className="h-0.5 w-[90vw] lg:w-[60vw] bg-black"></div>
-        <div className="flex flex-col justify-start items-start font-semibold lg:flex-row gap-1 lg:gap-5">
+        <div className="flex flex-col justify-start items-start font-normal lg:flex-row gap-1 lg:gap-5">
           <p>© 2024 Bloom All rights reserved</p>
           <p>Privacy Policy</p>
           <p>Terms of Service</p>

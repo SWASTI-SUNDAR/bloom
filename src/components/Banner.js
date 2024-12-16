@@ -5,11 +5,12 @@ const Banner = () => {
     <Container>
       <div className=" mx-auto">
         <div
-          className={`lg:bg-[url("/banner.png")] bg-[#00A896] lg:bg-transparent  lg:h-[67vh] mt-16 pb-16
+          className={` bg-[#008C95] rounded-3xl relative  mt-16 pb-16
              lg:bg-contain bg-cover  flex justify-center 
-            items-start p-16 flex-col lg:gap-12 gap-5   
+            items-start lg:p-16 p-5 flex-col lg:gap-12 gap-5   
             bg-no-repeat mx-auto`}
         >
+          <div className="absolute inset-0 z-0 bg-grid-banner opacity-90"></div>
           <h1 className="text-[#F3FDFD] font-semibold lg:text-4xl">
             Ready to Get Started?
           </h1>

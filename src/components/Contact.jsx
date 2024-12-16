@@ -168,7 +168,7 @@ const Contact = () => {
                   required
                   value={formData.message}
                   onChange={handleChange}
-                  className="mt-1 min-h-24 w-full border focus:outline-none border-gray-300 rounded-md bg-[#F3F3F3]"
+                  className="mt-1 p-2 min-h-24 w-full border focus:outline-none border-gray-300 rounded-md bg-[#F3F3F3]"
                 ></textarea>
               </div>
               <div className="mt-4 flex justify-center lg:justify-start">

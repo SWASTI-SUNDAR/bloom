@@ -6,7 +6,7 @@ import React from "react";
 
 function page() {
   return (
-    <section className="bg-[#F2F2F2] min-h-screen">
+    <section className="bg-[#F2F2F2] ">
       <SectionWithBackground
         title="Explore Our Services"
         description="We offer personalized services designed to help <br /> you grow,

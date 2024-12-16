@@ -32,7 +32,7 @@ const page = () => {
                 >
                   <img
                     src={item.icon}
-                    className="object-contain"
+                    className="object-contain w-full h-full"
                     alt=""
                   />
                   <div>

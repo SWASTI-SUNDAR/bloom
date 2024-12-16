@@ -15,7 +15,7 @@ export const CommunityData = [
   },
   {
     id: 3,
-    icon: "/community/icon3.png",
+    icon: "/community/icon2.png",
     section: "Parents",
     title: "Parents: Supporting Growth Together",
     desc: "Our Parents community is a space for caregivers to connect, share experiences, and find support. With workshops, discussions, and a supportive environment",
@@ -23,7 +23,7 @@ export const CommunityData = [
   {
     id: 4,
     icon: "/community/icon4.png",
-    section:"Women",
+    section: "Women",
     title: "Bloomher: Women Thriving Together",
     desc: "Bloomher is a supportive community for women, offering space for self-discovery, collaboration, and growth. Whether through leadership workshops, creative sessions, or personal development.",
   },

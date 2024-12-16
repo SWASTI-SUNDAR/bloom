@@ -14,7 +14,7 @@ const page = () => {
     <section className="bg-[#F2F2F2] min-h-screen overflow-hidden">
       <SectionWithBackground
         title="Our Network"
-        description="We collaborate with leading institutions, schools impactful projects."
+        description="We collaborate with leading institutions,<br /> schools impactful projects."
       />
       <Container>
         <h1 className="typography mt-16 lg:mt-10">Our networks</h1>
