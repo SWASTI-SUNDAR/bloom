@@ -59,7 +59,7 @@ const Footer = () => {
           height={48}
           className=""
         />
-        <p>FIORIRE NEL TUO SPAZIO COL TUO TEMPO</p>
+        <p className="text-center text-sm lg:text-base">FIORIRE NEL TUO SPAZIO COL TUO TEMPO</p>
         <div className="lg:flex flex-col hidden lg:flex-row items-start justify-start gap-5">
           {isClient &&
             data.map((item, index) => (
