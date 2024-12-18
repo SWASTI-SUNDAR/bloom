@@ -1,16 +1,25 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import emailjs from "@emailjs/browser";
 import Button from "../components/Button";
 import Container from "./Container";
-import { useSearchParams } from "next/navigation";
 
-const contactCategories = [
-  { title: "Students", value: "student" },
-  { title: "Buds", value: "bud" },
-  { title: "Bummer", value: "bummer" },
-  { title: "Creator", value: "creator" },
-  { title: "Parents", value: "parent" },
+const data = [
+  {
+    id: 1,
+    title: "BIELLAVIA TORINO 35, BIELLA",
+    icon: "/contact/icon1.svg",
+  },
+  {
+    id: 2,
+    title: "bloom@bloom-bi.it",
+    icon: "/contact/icon2.svg",
+  },
+  {
+    id: 3,
+    title: "(+39) 338 225 6056",
+    icon: "/contact/icon3.svg",
+  },
 ];
 
 const Contact = () => {
@@ -20,20 +29,9 @@ const Contact = () => {
     companyName: "",
     phone: "",
     message: "",
-    category: "student", // Default category
   });
   const [showToast, setShowToast] = useState(false);
   const [showError, setShowError] = useState(false);
-
-  const searchParams = useSearchParams();
-
-  useEffect(() => {
-    // Get the 'category' from the query parameter and set it in the form data if valid
-    const category = searchParams.get("category");
-    if (contactCategories.some((c) => c.value === category)) {
-      setFormData((prevData) => ({ ...prevData, category }));
-    }
-  }, [searchParams]);
 
   const YOUR_SERVICE_ID = process.env.NEXT_PUBLIC_YOUR_SERVICE_ID;
   const YOUR_TEMPLATE_ID = process.env.NEXT_PUBLIC_YOUR_TEMPLATE_ID;
@@ -57,9 +55,8 @@ const Contact = () => {
             name: "",
             email: "",
             companyName: "",
-            phone: "",
             message: "",
-            category: "student", // Reset to default category
+            phone: "",
           });
           setTimeout(() => {
             setShowToast(false);
@@ -76,22 +73,25 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="lg:px-32 pb-16 px-5 bg-white mt-10 pt-10">
+    <section
+      id="contact"
+      className="lg:px-32 pb-16 px-5 bg-white mt-10 pt-10  "
+    >
       <Container>
         <div className="overflow-hidden">
           <h1 className="text-4xl font-bold text-[#00A59B]">
             Have Questions? <br /> Get in Touch! 👋{" "}
           </h1>
-          <p className="mt-3 text-lg font-light text-[#808080]">
+          <p className="mt-3  text-lg font-light text-[#808080]">
             We’re here to answer any questions you may have about Bloom or our
             programs. Please feel free to <br /> reach out via the form below,
             and we will respond as soon as possible!
           </p>
 
-          <div className="mt-10" id="contact">
-            <form onSubmit={handleSubmit}>
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
-                <div>
+          <div className="mt-10">
+            <form onSubmit={handleSubmit} className="">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 ">
+                <div className="">
                   <label
                     htmlFor="name"
                     className="block font-semibold text-gray-700"
@@ -101,14 +101,14 @@ const Contact = () => {
                   <input
                     type="text"
                     id="name"
+                    required
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
-                    required
                     className="mt-1 p-2 w-full border focus:outline-none border-gray-300 rounded-md bg-[#F3F3F3]"
                   />
                 </div>
-                <div>
+                <div className="">
                   <label
                     htmlFor="email"
                     className="block font-semibold text-gray-700"
@@ -118,14 +118,14 @@ const Contact = () => {
                   <input
                     type="email"
                     id="email"
+                    required
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
-                    required
                     className="mt-1 p-2 w-full border focus:outline-none border-gray-300 rounded-md bg-[#F3F3F3]"
                   />
                 </div>
-                <div>
+                <div className="">
                   <label
                     htmlFor="phone"
                     className="block font-semibold text-gray-700"
@@ -136,13 +136,13 @@ const Contact = () => {
                     type="text"
                     id="phone"
                     name="phone"
+                    required
                     value={formData.phone}
                     onChange={handleChange}
-                    required
                     className="mt-1 p-2 w-full border focus:outline-none border-gray-300 rounded-md bg-[#F3F3F3]"
                   />
                 </div>
-                <div>
+                <div className="">
                   <label
                     htmlFor="companyName"
                     className="block font-semibold text-gray-700"
@@ -153,34 +153,14 @@ const Contact = () => {
                     type="text"
                     id="companyName"
                     name="companyName"
+                    required
                     value={formData.companyName}
                     onChange={handleChange}
-                    required
                     className="mt-1 p-2 w-full border focus:outline-none border-gray-300 rounded-md bg-[#F3F3F3]"
                   />
                 </div>
               </div>
-              <div className="mt-5">
-                <label
-                  htmlFor="category"
-                  className="block font-semibold text-gray-700"
-                >
-                  Category
-                </label>
-                <select
-                  id="category"
-                  name="category"
-                  value={formData.category}
-                  onChange={handleChange}
-                  className="mt-1 p-2 w-full border focus:outline-none border-gray-300 rounded-md bg-[#F3F3F3]"
-                >
-                  {contactCategories.map((category) => (
-                    <option key={category.value} value={category.value}>
-                      {category.title}
-                    </option>
-                  ))}
-                </select>
-              </div>
+
               <div className="mt-5">
                 <label
                   htmlFor="message"
@@ -191,13 +171,12 @@ const Contact = () => {
                 <textarea
                   id="message"
                   name="message"
+                  required
                   value={formData.message}
                   onChange={handleChange}
-                  required
                   className="mt-1 p-2 min-h-24 w-full border focus:outline-none border-gray-300 rounded-md bg-[#F3F3F3]"
                 ></textarea>
               </div>
-
               <div className="mt-4 flex justify-center lg:justify-start">
                 <Button
                   type="submit"
