@@ -93,7 +93,7 @@ const Footer = () => {
             height={24}
           />
         </div>
-        <div className="h-0.5 w-[90vw] lg:w-[60vw] bg-gray-600"></div>
+        <div className="h-0.5 w-[90vw] lg:w-[60vw] bg-gray-300"></div>
         <div className="flex flex-col justify-start items-start font-normal lg:flex-row gap-1 lg:gap-5">
           <p>© 2024 Bloom All rights reserved</p>
           <p>Privacy Policy</p>
