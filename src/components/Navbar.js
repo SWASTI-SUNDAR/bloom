@@ -3,11 +3,14 @@ import Link from "next/link";
 import Button from "./Button";
 import { useState, useEffect } from "react";
 import { RiArrowDropDownLine } from "react-icons/ri";
+import { usePathname } from "next/navigation";
 
 const Navbar = () => {
   const [show, setShow] = useState(false);
   const [dropdown, setDropdown] = useState(null);
   const [activeDropdown, setActiveDropdown] = useState(null);
+
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -79,8 +82,16 @@ const Navbar = () => {
               key={index}
               onMouseEnter={() => setDropdown(index)}
               onMouseLeave={() => setDropdown(null)}
-              className="relative group cursor-pointer dropdown-container"
+              className={`relative group cursor-pointer dropdown-container ${
+                pathname === item.to ? "font-bold text-[#008C95]" : ""
+              }`}
             >
+              <span
+                className={`h-0.5 ${
+                  pathname === item.to ? "w-full" : ""
+                } bg-[#008C95] absolute bottom-0  ease-in-out duration-300`}
+              ></span>
+
               {item.items ? (
                 <span
                   className="flex justify-center items-center"
@@ -92,7 +103,6 @@ const Navbar = () => {
               ) : (
                 <Link href={item.to || "/"}>{item.title}</Link>
               )}
-
               {/* Dropdown Menu */}
               {item.items && dropdown === index && (
                 <div className="absolute top-full left-0 bg-white shadow-lg rounded-md">
