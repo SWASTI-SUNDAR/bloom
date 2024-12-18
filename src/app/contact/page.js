@@ -3,7 +3,7 @@ import Contact from "@/components/Contact";
 import Container from "@/components/Container";
 import SectionWithBackground from "@/components/SectionWithBackground";
 import Image from "next/image";
-import React from "react";
+import React, { Suspense } from "react";
 
 const page = () => {
   return (
@@ -35,7 +35,9 @@ const page = () => {
           })}
         </div>
       </Container>
-      <Contact />
+      <Suspense fallback={<div>Loading...</div>}>
+        <Contact />
+      </Suspense>
     </section>
   );
 };
