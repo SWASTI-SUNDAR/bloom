@@ -2,7 +2,7 @@ import React from "react";
 
 const HeroSection = () => {
   return (
-    <section className="flex lg:flex-row lg:min-h-screen xl:min-h-auto mx-auto flex-col-reverse w-screen lg:justify-between justify-center items-center gap-5 lg:gap-0 xl:px-28 max-w-screen-2xl">
+    <section className="flex lg:flex-row lg:min-h-screen 2xl:max-h-full mx-auto flex-col-reverse w-screen lg:justify-between justify-center items-center gap-5 lg:gap-0 xl:px-28 max-w-screen-2xl">
       <div className="lg:px-16 px-5 flex flex-col gap-5 lg:gap-10">
         <h1 className="text-[#00A59B] text-center lg:text-start text-2xl lg:text-6xl font-bold ">
           Bloom in Your Space <br /> in Your Time

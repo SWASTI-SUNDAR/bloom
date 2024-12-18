@@ -9,7 +9,7 @@ const Teams = () => {
   const data = team === "bloom" ? Bloom : Creator;
 
   return (
-    <div id="teams" className="min-h-screen px-5 lg:px-28 bg-[#F2F2F2] pb-16">
+    <div id="teams" className="  bg-[#F2F2F2] pb-16">
       <h1 className="text-4xl text-[#00A59B] font-semibold text-center pt-16">
         Meet Our Team
       </h1>
